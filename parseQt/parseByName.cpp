@@ -160,7 +160,7 @@ void parseByName::prepareParse()
 					std::thread second(parse, name, secondThread);
 					first.join();
 					second.join();
-					fstream doc("resultName.txt");
+					fstream doc("resultsName.txt");
 					string log;
 					if (doc.is_open())
 					{
@@ -176,7 +176,7 @@ void parseByName::prepareParse()
 					}
 					else
 					{
-						remove("resultName.txt");
+						remove("resultsName.txt");
 					}
 				}
 				else if (allLogs.size() == 3)
@@ -202,7 +202,7 @@ void parseByName::prepareParse()
 					first.join();
 					second.join();
 					third.join();
-					fstream doc("resultName.txt");
+					fstream doc("resultsName.txt");
 					string log;
 					if (doc.is_open())
 					{
@@ -218,7 +218,7 @@ void parseByName::prepareParse()
 					}
 					else
 					{
-						remove("resultName.txt");
+						remove("resultsName.txt");
 					}
 				}
 				else
@@ -249,7 +249,7 @@ void parseByName::prepareParse()
 					second.join();
 					third.join();
 					fourth.join();
-					fstream doc("resultName.txt");
+					fstream doc("resultsName.txt");
 					string log;
 					if (doc.is_open())
 					{
@@ -265,7 +265,7 @@ void parseByName::prepareParse()
 					}
 					else
 					{
-						remove("resultName.txt");
+						remove("resultsName.txt");
 					}
 				}
 				if (ui.results->toPlainText().isEmpty())

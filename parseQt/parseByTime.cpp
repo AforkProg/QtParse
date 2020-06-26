@@ -37,8 +37,14 @@ void parse(long unixStart, long unixEnd, vector<string> paths)
 			string tempStart;
 			string tempEnd;
 			int counter = 0;
+			int strCheck = 0;
 			while (getline(doc, log))
 			{
+				if (strCheck == 0)
+				{
+					strCheck = 1;
+					continue;
+				}
 				counter = 0;
 				for (int a = 0; ; a++)
 				{
@@ -147,11 +153,16 @@ void parseByTime::prepareParse()
 					std::string startTemp;
 					std::string endTemp;
 					int counter = 0;
+					int strCheck = 0;
 					if (doc.is_open())
 					{
 						while (getline(doc, log))
 						{
-							counter = 0;
+							if (strCheck == 0)
+							{
+								continue;
+								counter = 1;
+							}
 							for (int a = 0; ; a++)
 							{
 								counter++;
@@ -178,6 +189,7 @@ void parseByTime::prepareParse()
 									}
 								}
 							}
+							strCheck++;
 							startTemp.clear();
 							endTemp.clear();
 						}
